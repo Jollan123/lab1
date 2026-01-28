@@ -19,18 +19,42 @@ class Saab95Test extends Car {
 
     @Test
     void incrementSpeed() {
-        assertEqu
+        Saab.currentSpeed = 0;
+        Saab.incrementSpeed(10);
+
+        if (Saab.getTurbo()) assertEquals(16.25, Saab.getCurrentSpeed());
+        else assertEquals(12.5, Saab.getCurrentSpeed());
     }
 
     @Test
     void decrementSpeed() {
+        Saab.currentSpeed = 0;
+        Saab.decrementSpeed(10);
+
+        if (Saab.getTurbo()) assertEquals(-16.25, Saab.getCurrentSpeed());
+        else assertEquals(-12.5, Saab.getCurrentSpeed());
     }
 
     @Test
     void gas() {
+        double[] amounts = {1, -1, 10, 0.5};
+        double orgSpeed = Saab.getCurrentSpeed();
+        for (double i : amounts) {
+            Saab.gas(i);
+            assertTrue((Saab.getCurrentSpeed() > orgSpeed));
+            assertTrue((Saab.getCurrentSpeed() < Saab.getEnginePower() || Saab.getCurrentSpeed() > 0));
+        }
+
     }
 
     @Test
     void brake() {
+        double[] amounts = {1, -1, 10, 0.5};
+        double orgSpeed = Saab.getCurrentSpeed();
+        for (double i : amounts) {
+            Saab.brake(i);
+            assertFalse((Saab.getCurrentSpeed() > orgSpeed));
+            assertTrue((Saab.getCurrentSpeed() < Saab.getEnginePower() || Saab.getCurrentSpeed() > 0));
+        }
     }
 }

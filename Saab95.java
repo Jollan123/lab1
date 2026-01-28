@@ -41,11 +41,21 @@ public class Saab95 extends Car{
     
     // TODO fix this method according to lab pm
     public void gas(double amount){
+        if (amount < 0 || amount > 1) return;
+
         incrementSpeed(amount);
+
+        if (getCurrentSpeed() > enginePower) {
+            currentSpeed = enginePower;
+        }
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
+        if (amount < 0 || amount > 1) return;
+
         decrementSpeed(amount);
+
+        if (currentSpeed < 0) currentSpeed = 0;
     }
 }
