@@ -38,8 +38,7 @@ public class Saab95 extends Car{
     public void decrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
-    
-    // TODO fix this method according to lab pm
+
     public void gas(double amount){
         if (amount < 0 || amount > 1) return;
 
@@ -50,7 +49,6 @@ public class Saab95 extends Car{
         }
     }
 
-    // TODO fix this method according to lab pm
     public void brake(double amount){
         if (amount < 0 || amount > 1) return;
 
