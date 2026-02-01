@@ -1,5 +1,7 @@
 import java.awt.*;
 
+//Gör volvo tester och fixa gas and brake
+
 public abstract class Car implements Movable{
 
     @Override
@@ -9,12 +11,10 @@ public abstract class Car implements Movable{
     }
 
     @Override
-    public void turn_left() { direction -= (currentSpeed % 1) * turningForce; }
+    public void turn_left() { direction -= 0.15; }
 
     @Override
-    public void turn_right() {
-        direction += (currentSpeed % 1) * turningForce;
-    }
+    public void turn_right() { direction += 0.15; }
 
     private double direction = 0;
     protected double getDirection() {
@@ -23,9 +23,7 @@ public abstract class Car implements Movable{
         return direction;
     }
 
-
-    protected double x, y;
-
+    private double x, y;
 
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
@@ -61,4 +59,25 @@ public abstract class Car implements Movable{
     protected void stopEngine(){
         currentSpeed = 0;
     }
+
+    protected abstract double speedFactor();
+
+    public void incrementSpeed(double amount){
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
+    }
+
+    public void decrementSpeed(double amount){
+        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
+    }
+
+    public void gas(double amount){
+        if(amount < 0 || amount > 1) return;
+        incrementSpeed(amount);
+    }
+
+    public void brake(double amount){
+        if(amount < 0 || amount > 1) return;
+        decrementSpeed(amount);
+    }
+
 }

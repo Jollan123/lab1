@@ -13,27 +13,9 @@ public class Volvo240 extends Car{
         turningForce = 1;
         stopEngine();
     }
-
     
-    private double speedFactor(){
+    protected double speedFactor(){
         return enginePower * 0.01 * trimFactor;
     }
 
-    public void incrementSpeed(double amount) { currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount,enginePower); }
-
-    public void decrementSpeed(double amount){
-        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount,0);
-    }
-
-    public void gas(double amount){
-        if (amount < 0 || amount > 1) return;
-
-        incrementSpeed(amount);
-    }
-
-    public void brake(double amount){
-        if (amount < 0 || amount > 1) return;
-
-        decrementSpeed(amount);
-    }
 }
