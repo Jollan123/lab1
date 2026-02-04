@@ -12,11 +12,11 @@ public abstract class Car implements Movable{
     }
 
     @Override
-    public void turn_left() { direction -= (currentSpeed % 1) * turningForce; }
+    public void turn_left() {direction -= 0.15;}
 
     @Override
     public void turn_right() {
-        direction += (currentSpeed % 1) * turningForce;
+        direction += 0.15;
     }
 
     private double direction = 0;
@@ -25,8 +25,19 @@ public abstract class Car implements Movable{
         if (direction < 0) direction += Math.PI * 2;
         return direction;
     }
+   /*
+    protected double getPosition() {
+        return new Pair<Double, Double>(x, y);
+    }
+    */
+
+
     //Utomstående ska inte kunna ändra positionen men alla nya bilar som skapas behöver använda och uppdatera positionen
     protected double x, y;
+
+    public double getDistance(double x1, double y1) {
+        return Math.sqrt(((x-x1)+(y-y1)));
+    }
 
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
