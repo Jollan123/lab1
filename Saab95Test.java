@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Saab95Test extends Car {
+class Saab95Test {
     Saab95 Saab = new Saab95();
 
     @Test
@@ -32,7 +32,7 @@ class Saab95Test extends Car {
         Saab.decrementSpeed(10);
 
         if (Saab.getTurbo()) assertEquals(-16.25, Saab.getCurrentSpeed());
-        else assertEquals(-12.5, Saab.getCurrentSpeed());
+        assertEquals(-12.5, Saab.getCurrentSpeed());
     }
 
     @Test

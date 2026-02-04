@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Volvo240Test extends Car{
+class Volvo240Test{
     Volvo240 Volvo = new Volvo240();
 
     @Test
@@ -30,7 +30,6 @@ class Volvo240Test extends Car{
         }
 
     }
-
     @Test
     void brake() {
         double[] amounts = {1, -1, 10, 0.5};
