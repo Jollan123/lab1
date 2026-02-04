@@ -1,9 +1,9 @@
 import java.awt.*;
 
-//Gör volvo tester och fixa gas and brake
-
 public abstract class Car implements Movable{
+    //Abstract - går ej att göra objekt av car
 
+    //Hjälper till för att se att vi verkligen override:ar
     @Override
     public void move() {
         y += Math.sin(getDirection()) * currentSpeed;
@@ -11,10 +11,12 @@ public abstract class Car implements Movable{
     }
 
     @Override
-    public void turn_left() { direction -= 0.15; }
+    public void turn_left() { direction -= (currentSpeed % 1) * turningForce; }
 
     @Override
-    public void turn_right() { direction += 0.15; }
+    public void turn_right() {
+        direction += (currentSpeed % 1) * turningForce;
+    }
 
     private double direction = 0;
     protected double getDirection() {
@@ -22,8 +24,8 @@ public abstract class Car implements Movable{
         if (direction < 0) direction += Math.PI * 2;
         return direction;
     }
-
-    private double x, y;
+    //Utomstående ska inte kunna ändra positionen men alla nya bilar som skapas behöver använda och uppdatera positionen
+    protected double x, y;
 
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
@@ -52,34 +54,11 @@ public abstract class Car implements Movable{
         color = clr;
     }
 
-    protected void startEngine(){
+    public void startEngine(){
         currentSpeed = 0.1;
     }
 
-    protected void stopEngine(){
+    public void stopEngine(){
         currentSpeed = 0;
     }
-
-    protected double speedFactor() {
-        return 0;
-    }
-
-    public void incrementSpeed(double amount){
-        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
-    }
-
-    public void decrementSpeed(double amount){
-        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
-    }
-
-    public void gas(double amount){
-        if(amount < 0 || amount > 1) return;
-        incrementSpeed(amount);
-    }
-
-    public void brake(double amount){
-        if(amount < 0 || amount > 1) return;
-        decrementSpeed(amount);
-    }
-
 }

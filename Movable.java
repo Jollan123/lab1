@@ -1,5 +1,5 @@
-public interface Movable {
-    void move();
-    void turn_left();
-    void turn_right();
-}
+ public interface Movable {
+        void move();
+        void turn_left();
+        void turn_right();
+    }
