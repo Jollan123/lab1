@@ -35,6 +35,26 @@ public abstract class Car implements Movable{
     protected String modelName; // The car model name
     protected double turningForce;
 
+    protected abstract double speedFactor();
+
+    public void incrementSpeed(double amount){
+        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
+    }
+
+    public void decrementSpeed(double amount){
+        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
+    }
+
+    public void gas(double amount){
+        if(amount < 0 || amount > 1) return;
+        incrementSpeed(amount);
+    }
+
+    public void brake(double amount){
+        if(amount < 0 || amount > 1) return;
+        decrementSpeed(amount);
+    }
+
     public int getNrDoors(){
         return nrDoors;
     }
