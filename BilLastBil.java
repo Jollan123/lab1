@@ -26,7 +26,11 @@ public class BilLastBil extends Truck{
     }
 
     public void loadCar(PassengerCar Car){
-        if (getDistance(Car.x, Car.y) < 5) loadedCars.add(Car);
+        if (getDistance(Car.x, Car.y) < 5) {
+            loadedCars.add(Car);
+            Car.x = x;
+            Car.y = y;
+        }
     }
 
     public void removeCar(){
