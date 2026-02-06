@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BilLastBilTest {
     BilLastBil Lastbil = new BilLastBil();
+    Saab95 saab = new Saab95();
+
 
     @Test
     void raiseRamp(){
@@ -19,15 +21,16 @@ class BilLastBilTest {
 
     @Test
     void loadCar() {
-        Saab95 saab = new Saab95();
         Lastbil.loadCar(saab);
         assertEquals(saab,Lastbil.loadedCars.get(0));
     }
 
     @Test
     void removeCar() {
-        Saab95 saab = new Saab95();
-        assertNotEquals(saab, Lastbil.loadedCars.get(0) );
+        Lastbil.loadCar(saab);
+        Lastbil.removeCar();
+
+        assertTrue(Lastbil.getLoadedCars().isEmpty());
 
     }
 

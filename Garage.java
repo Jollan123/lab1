@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
 public class Garage<CarType extends Car> {
-    ArrayList<CarType> storedCars = new ArrayList<>(5);
+    private ArrayList<CarType> storedCars = new ArrayList<>(5);
     public boolean isOpen;
     private final double x,y;
 
     public Garage(double x, double y){
-        boolean isOpen = false;
+        this.isOpen = false;
         this.x = x;
         this.y = y;
     }
 
     public void storeCar(CarType Car) {
-        if (Car.getDistance(x, y) < 5 && isOpen) {
+        if (Car.getDistance(x, y) < 5.0 && isOpen) {
             storedCars.add(Car);
             Car.x = x;
             Car.y = y;
@@ -20,11 +20,15 @@ public class Garage<CarType extends Car> {
     }
 
     public void removeCar(){
-        if (isOpen) {
-            int unloadedCarIndex = storedCars.size() - 1;
-            storedCars.get(unloadedCarIndex).y = y + 5;
-            storedCars.removeLast();
+        if (isOpen && !storedCars.isEmpty()) {
+            int index = storedCars.size() - 1;
+            storedCars.get(index).y = y + 5;
+            storedCars.remove(index);
         }
+    }
+
+    public ArrayList<CarType> getStoredCars() {
+        return storedCars;
     }
 
     public void openGarage(){ isOpen = true; }

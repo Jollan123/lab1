@@ -28,11 +28,11 @@ class Saab95Test {
 
     @Test
     void decrementSpeed() {
-        Saab.currentSpeed = 0;
+        Saab.currentSpeed = 20;
         Saab.decrementSpeed(10);
 
-        if (Saab.getTurbo()) assertEquals(-16.25, Saab.getCurrentSpeed());
-        assertEquals(-12.5, Saab.getCurrentSpeed());
+        if (Saab.getTurbo()) assertEquals(3.75, Saab.getCurrentSpeed());
+        assertEquals(7.5, Saab.getCurrentSpeed());
     }
 
     @Test

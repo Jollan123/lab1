@@ -26,7 +26,7 @@ public class BilLastBil extends Truck{
     }
 
     public void loadCar(PassengerCar Car){
-        if (getDistance(Car.x, Car.y) < 5) {
+        if (getDistance(Car.x, Car.y) < 5.0) {
             loadedCars.add(Car);
             Car.x = x;
             Car.y = y;
@@ -34,9 +34,13 @@ public class BilLastBil extends Truck{
     }
 
     public void removeCar(){
-        int unloadedCarIndex = loadedCars.size() - 1;
-        loadedCars.get(unloadedCarIndex).y = y + 5;
-        loadedCars.removeLast();
+        if (!loadedCars.isEmpty()) {
+            loadedCars.removeLast();
+        }
+    }
+
+    public ArrayList<PassengerCar> getLoadedCars() {
+        return loadedCars;
     }
 
     @Override

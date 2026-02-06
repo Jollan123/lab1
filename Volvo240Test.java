@@ -14,9 +14,10 @@ class Volvo240Test {
 
     @Test
     void decrementSpeed() {
-        Volvo.currentSpeed = 0;
+        Volvo.currentSpeed = 20;
         Volvo.decrementSpeed(10);
-        assertEquals(-12.5, Volvo.getCurrentSpeed());
+
+        assertEquals(7.5, Volvo.getCurrentSpeed());
     }
 
     @Test

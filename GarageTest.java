@@ -3,23 +3,31 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GarageTest {
-    Garage<Car> garage = new Garage<>(10, 10);
+    Garage<Car> garage = new Garage<>(2, 2);
     Saab95 saab = new Saab95();
+
 
     @Test
     void storeCar() {
+        // IMPORTANT: place the car close enough
+        saab.x = 8;
+        saab.y = 8;
+
         garage.openGarage();
         garage.storeCar(saab);
-        assertEquals(saab, garage.storedCars.getFirst());
 
+        assertEquals(1, garage.getStoredCars().size());
+        assertSame(saab, garage.getStoredCars().get(0));
     }
 
     @Test
     void removeCar() {
         garage.openGarage();
+
         garage.storeCar(saab);
         garage.removeCar();
-        assertNotEquals(saab, garage.storedCars.getFirst());
+
+        assertTrue(garage.getStoredCars().isEmpty());
     }
 
     @Test
