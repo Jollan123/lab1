@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class BilLastBil extends Truck{
 
-    private ArrayList<PassengerCar> loadedCars = new ArrayList<>(8);
-    private boolean isRampUp;
+    ArrayList<PassengerCar> loadedCars = new ArrayList<>(8);
+    boolean isRampUp;
 
 
     public BilLastBil() {

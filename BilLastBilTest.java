@@ -20,6 +20,7 @@ class BilLastBilTest {
     @Test
     void loadCar() {
         Saab95 saab = new Saab95();
+        Lastbil.loadCar(saab);
         assertEquals(saab,Lastbil.loadedCars.get(0));
     }
 

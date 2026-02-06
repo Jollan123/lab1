@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Garage<CarType extends Car> {
-    private ArrayList<CarType> storedCars = new ArrayList<>(5);
-    private boolean isOpen;
+    ArrayList<CarType> storedCars = new ArrayList<>(5);
+    public boolean isOpen;
     private final double x,y;
 
     public Garage(double x, double y){
