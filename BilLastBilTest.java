@@ -10,19 +10,19 @@ class BilLastBilTest {
     @Test
     void raiseRamp(){
         Lastbil.raiseRamp();
-        assertTrue(Lastbil.isRampUp);
+        assertTrue(Lastbil.getRampState());
     }
 
     @Test
     void lowerRamp() {
         Lastbil.lowerRamp();
-        assertFalse(Lastbil.isRampUp);
+        assertFalse(Lastbil.getRampState());
     }
 
     @Test
     void loadCar() {
         Lastbil.loadCar(saab);
-        assertEquals(saab,Lastbil.loadedCars.get(0));
+        assertEquals(saab,Lastbil.getLoadedCars().get(0));
     }
 
     @Test

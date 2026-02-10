@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class BilLastBil extends Truck{
 
-    ArrayList<PassengerCar> loadedCars = new ArrayList<>(8);
-    boolean isRampUp;
+    private ArrayList<PassengerCar> loadedCars = new ArrayList<>(8);
+    private boolean isRampUp;
 
 
     public BilLastBil() {
@@ -26,27 +26,33 @@ public class BilLastBil extends Truck{
     }
 
     public void loadCar(PassengerCar Car){
-        if (getDistance(Car.x, Car.y) < 5.0) {
+        if (getDistance(Car.x, Car.y) < 5.0 && !isRampUp) {
             loadedCars.add(Car);
             Car.x = x;
             Car.y = y;
         }
+        else throw new IllegalStateException();
     }
 
-    public void removeCar(){
-        if (!loadedCars.isEmpty()) {
-            loadedCars.removeLast();
+    public PassengerCar removeCar(){
+        if (!loadedCars.isEmpty() && !isRampUp) {
+            PassengerCar unLoadedCar = loadedCars.removeLast();
+            unLoadedCar.y = y + 5;
+            unLoadedCar.x = x;
+            return unLoadedCar;
         }
+        else throw new IllegalStateException();
     }
 
     public ArrayList<PassengerCar> getLoadedCars() {
         return loadedCars;
     }
 
+    public boolean getRampState() { return isRampUp; }
+
     @Override
     public void brake(double amount) {
         super.brake(amount);
-        if (currentSpeed == 0) lowerRamp();
     }
 
     @Override
