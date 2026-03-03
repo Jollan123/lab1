@@ -95,7 +95,7 @@
           <mxGeometry height="50" width="110" x="170" y="339" as="geometry" />
         </mxCell>
         <mxCell id="e9FiMbLoK7rE7MMen19S-26" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#dae8fc;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;" value="&lt;b&gt;CarView&lt;/b&gt;" vertex="1">
-          <mxGeometry height="70" width="170" x="210" y="650" as="geometry" />
+          <mxGeometry height="90" width="170" x="210" y="650" as="geometry" />
         </mxCell>
         <mxCell id="e9FiMbLoK7rE7MMen19S-97" edge="1" parent="e9FiMbLoK7rE7MMen19S-26" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="e9FiMbLoK7rE7MMen19S-89" value="">
           <mxGeometry relative="1" width="160" as="geometry">
@@ -107,8 +107,8 @@
             <mxPoint x="-170" y="-780" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e9FiMbLoK7rE7MMen19S-27" parent="e9FiMbLoK7rE7MMen19S-26" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- carC : CarController&lt;div&gt;- drawPanel : DrawPanel&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="44" width="170" y="26" as="geometry" />
+        <mxCell id="e9FiMbLoK7rE7MMen19S-27" parent="e9FiMbLoK7rE7MMen19S-26" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="- carC : CarController&lt;div&gt;- drawPanel : DrawPanel&lt;/div&gt;&lt;div&gt;- X: int&lt;/div&gt;&lt;div&gt;- Y: int&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="64" width="170" y="26" as="geometry" />
         </mxCell>
         <mxCell id="e9FiMbLoK7rE7MMen19S-29" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Volvo240" vertex="1">
           <mxGeometry height="90" width="160" x="220" y="460" as="geometry" />
@@ -314,13 +314,13 @@
             <mxPoint x="620" y="560" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e9FiMbLoK7rE7MMen19S-74" edge="1" parent="1" source="e9FiMbLoK7rE7MMen19S-27" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.519;exitY=1.022;exitDx=0;exitDy=0;exitPerimeter=0;" value="Extends">
+        <mxCell id="e9FiMbLoK7rE7MMen19S-74" edge="1" parent="1" source="p6v23BJatieOPouuVlRJ-2" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="Extends">
           <mxGeometry relative="1" width="160" as="geometry">
             <Array as="points">
-              <mxPoint x="300" y="960" />
+              <mxPoint x="295" y="960" />
               <mxPoint x="-630" y="960" />
             </Array>
-            <mxPoint x="-260" y="600" as="sourcePoint" />
+            <mxPoint x="298" y="810" as="sourcePoint" />
             <mxPoint x="-630" y="190" as="targetPoint" />
           </mxGeometry>
         </mxCell>
@@ -404,6 +404,9 @@
         </mxCell>
         <mxCell id="4y-8fXjFtm79AQlNkuuE-6" parent="4y-8fXjFtm79AQlNkuuE-3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ startEngine(): void" vertex="1">
           <mxGeometry height="26" width="190" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p6v23BJatieOPouuVlRJ-2" parent="1" style="html=1;whiteSpace=wrap;align=left;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;+ update(Garage&amp;lt;Volvo240&amp;gt; workshop): void&lt;div&gt;+ initComponents(String title):&lt;/div&gt;&lt;div&gt;void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="170" x="210" y="740" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
