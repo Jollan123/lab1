@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15" version="29.5.2">
   <diagram name="Sida-1" id="tooVVfIPhqLxK2crwEbi">
-    <mxGraphModel dx="3400" dy="2617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1856" dy="1748" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -82,13 +82,13 @@
         <mxCell id="e9FiMbLoK7rE7MMen19S-21" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;DrawPanel&lt;/b&gt;" vertex="1">
           <mxGeometry height="130" width="320" x="410" y="650" as="geometry" />
         </mxCell>
-        <mxCell id="e9FiMbLoK7rE7MMen19S-22" parent="e9FiMbLoK7rE7MMen19S-21" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;- sprites: ArrayList&amp;lt;Sprite&amp;gt;&amp;nbsp;&lt;/div&gt;- ?" vertex="1">
+        <mxCell id="e9FiMbLoK7rE7MMen19S-22" parent="e9FiMbLoK7rE7MMen19S-21" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;- sprites: ArrayList&amp;lt;Sprite&amp;gt;&amp;nbsp;&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="320" y="30" as="geometry" />
         </mxCell>
         <mxCell id="4y-8fXjFtm79AQlNkuuE-8" parent="e9FiMbLoK7rE7MMen19S-21" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
           <mxGeometry height="8" width="320" y="70" as="geometry" />
         </mxCell>
-        <mxCell id="e9FiMbLoK7rE7MMen19S-23" parent="e9FiMbLoK7rE7MMen19S-21" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="+ DrawPanel(int x, int y)&lt;div&gt;+ moveit( int, int, Sprite sprite): void&lt;/div&gt;&lt;div&gt;# paintComponent(Graphics g) : void&lt;/div&gt;" vertex="1">
+        <mxCell id="e9FiMbLoK7rE7MMen19S-23" parent="e9FiMbLoK7rE7MMen19S-21" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="+ DrawPanel(int x, int y)&lt;div&gt;moveit( int, int, Sprite sprite): void&lt;/div&gt;&lt;div&gt;# paintComponent(Graphics g) : void&lt;/div&gt;" vertex="1">
           <mxGeometry height="52" width="320" y="78" as="geometry" />
         </mxCell>
         <mxCell id="e9FiMbLoK7rE7MMen19S-25" parent="1" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;PassengerCar&lt;/b&gt;" vertex="1">
